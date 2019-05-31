@@ -1,0 +1,71 @@
+<!-- -->
+<ion-header>
+
+  <ion-navbar  color="primary">
+    <ion-title>
+      <span ion-text>{{ trip.name }}</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="common-bg">
+  <!--slides-->
+  <ion-slides class="to-top" pager>
+    <ion-slide *ngFor="let image of trip.images">
+      <img [src]="image" alt="">
+    </ion-slide>
+  </ion-slides>
+
+  <!--services-->
+  <ion-grid class="border-bottom dark-bg">
+    <ion-row>
+      <ion-col text-center>
+        <div class="text-sm">
+          <div>
+            <ion-icon name="time" class="text-white"></ion-icon>
+            <span ion-text color="light">{{ trip.time }}</span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--high light-->
+  <div class="border-bottom" padding>
+    <span ion-text color="dark" class="bold">Causas</span>
+    <ul class="highlight">
+      <li *ngFor="let highlight of trip.highlights">
+        <ion-icon name="checkmark" class="text-green"></ion-icon>
+        <span ion-text color="primary">{{ highlight }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <!--booking form-->
+  <div class="booking-form card round" margin>
+    <div class="border-bottom" padding>
+      <h5>{{ trip.sub_name }}</h5>
+
+      <!--choose guest-->
+
+    </div>
+    <div padding class="form-bottom">
+<!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--description-->
+  <div class="border-bottom" padding>
+    <span ion-text color="primary" class="bold">DESCRIPCIÓN</span>
+    <p ion-text>{{ trip.description }}</p>
+  </div>
+
+  <!--address-->
+  <div class="border-bottom" padding>
+    <span ion-text color="primary" class="bold">LOCACIÓN</span>
+    <p ion-text>{{ trip.location }}</p>
+  </div>
+</ion-content>

@@ -1,0 +1,22 @@
+<!--  -->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+  <div class="list-no-border">
+    <!--nearby places-->
+    <!--recent places-->
+    <ion-item *ngFor="let item of places.nearby" tappable (click)="searchBy(item)">
+      <ion-icon name="md-time" item-left color="primary"></ion-icon>
+      <span ion-text color="primary">{{ item.name }}</span>
+    </ion-item>
+  </div>
+</ion-content>

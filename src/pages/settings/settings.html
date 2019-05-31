@@ -1,0 +1,69 @@
+<!-- -->
+<ion-header class="no-shadow">
+
+  <ion-navbar class="no-border">
+    <ion-title>
+      <ion-icon name="cog" class="text-primary"></ion-icon>
+      <span class="text-primary">Configuraciones</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="common-bg">
+  <!-- User settings-->
+  <ion-item-group>
+    <ion-item-divider color="secondary" class="bold">Configuraciones de usuario</ion-item-divider>
+    <ion-item>
+      <ion-label>Lenguaje</ion-label>
+      <ion-select [(ngModel)]="language" cancelText="Cancel" okText="OK">
+        <ion-option value="en-US" >Inglés (US)</ion-option>
+        <ion-option value="en-GB">Inglés (UK)</ion-option>
+        <ion-option value="en-CA">Inglés (CA)</ion-option>
+        <ion-option value="en-AU">Inglés (AU)</ion-option>
+        <ion-option value="en-IN">Inglés (IN)</ion-option>
+        <ion-option value="pt-BR">Portugués (BR)</ion-option>
+        <ion-option value="pt-PT">Portugués (PT)</ion-option>
+        <ion-option value="es-ES">Español (ES)</ion-option>
+        <ion-option value="es-AR">Español (AR)</ion-option>
+        <ion-option value="es-CO">Español (CO)</ion-option>
+        <ion-option value="es-CL" selected="true" >Español (CL)</ion-option>
+        <ion-option value="es-MX">Español (MX)</ion-option>
+        <ion-option value="zh-CN">Chino (CN)</ion-option>
+        <ion-option value="zh-TW">Chino (TW)</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Moneda</ion-label>
+      <ion-select [(ngModel)]="currency" cancelText="Cancelar" okText="OK">
+        <ion-option value="USD" >U.S Dollar (US$)</ion-option>
+        <ion-option value="EUR">Euro (€)</ion-option>
+        <ion-option value="GBP" selected="true">Peso Chileno (CLP)</ion-option>
+        <ion-option value="BRL">Brazilian Real (R$)</ion-option>
+        <ion-option value="CNY">Chino Yuan</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>¿Notificaciones?</ion-label>
+      <ion-toggle checked="true"></ion-toggle>
+    </ion-item>
+  </ion-item-group>
+  <!-- App settings-->
+  <ion-item-group>
+    <ion-item-divider color="secondary" class="bold">Configuraciones de la aplicación</ion-item-divider>
+    <ion-item>
+      <span>Limpiar datos privados</span>
+    </ion-item>
+    <ion-item>
+      <ion-label>¿Notificaciones push?</ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <span>Política de privacidad</span>
+    </ion-item>
+  </ion-item-group>
+
+  <!--sign out button-->
+  <button ion-button color="primary" full tappable (click)="logout()">CERRAR SESIÓN</button>
+
+</ion-content>
